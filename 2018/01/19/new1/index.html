@@ -100,22 +100,28 @@
   <meta name="keywords" content="Hexo, NexT" />
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tesla Castle">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="#听说这样可以变成标题12018年1月19日，我终于把想要搭的博客搭好了……搭建的路程还真是异常的曲折，首先想在windows下尝试，首先搜索到的教程是用jekyll作为模板来用，经过多重踩坑之后以放弃告终。然后可爱的室友告诉我hexo比较好用，于是转战hexo，结果在卡在了部署的那里，经过一番折腾后再次弃坑，一怒之下转向了前段时间折腾我好长时间的linux系统，终于……好了（心情激动中）。讲道理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu16.04使用hexo搭建github博客">
+<meta property="og:url" content="http://yoursite.com/2018/01/19/new1/index.html">
 <meta property="og:site_name" content="Tesla Castle">
+<meta property="og:description" content="#听说这样可以变成标题12018年1月19日，我终于把想要搭的博客搭好了……搭建的路程还真是异常的曲折，首先想在windows下尝试，首先搜索到的教程是用jekyll作为模板来用，经过多重踩坑之后以放弃告终。然后可爱的室友告诉我hexo比较好用，于是转战hexo，结果在卡在了部署的那里，经过一番折腾后再次弃坑，一怒之下转向了前段时间折腾我好长时间的linux系统，终于……好了（心情激动中）。讲道理">
+<meta property="og:image" content="http://yoursite.com/2018/01/19/new1/new1/pic1.png">
+<meta property="og:updated_time" content="2018-01-19T14:25:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tesla Castle">
+<meta name="twitter:title" content="ubuntu16.04使用hexo搭建github博客">
+<meta name="twitter:description" content="#听说这样可以变成标题12018年1月19日，我终于把想要搭的博客搭好了……搭建的路程还真是异常的曲折，首先想在windows下尝试，首先搜索到的教程是用jekyll作为模板来用，经过多重踩坑之后以放弃告终。然后可爱的室友告诉我hexo比较好用，于是转战hexo，结果在卡在了部署的那里，经过一番折腾后再次弃坑，一怒之下转向了前段时间折腾我好长时间的linux系统，终于……好了（心情激动中）。讲道理">
+<meta name="twitter:image" content="http://yoursite.com/2018/01/19/new1/new1/pic1.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/19/new1/"/>
 
 
-  <title>Tesla Castle</title>
+  <title>ubuntu16.04使用hexo搭建github博客 | Tesla Castle</title>
   
 
 
@@ -162,8 +168,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -231,9 +236,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -265,9 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/19/new1/" itemprop="url">ubuntu16.04使用hexo搭建github博客</a></h1>
+          <h1 class="post-title" itemprop="name headline">ubuntu16.04使用hexo搭建github博客</h1>
         
 
         <div class="post-meta">
@@ -315,9 +318,7 @@
       
 
       
-        
-          
-            <p>#听说这样可以变成标题1<br>2018年1月19日，我终于把想要搭的博客搭好了……<br>搭建的路程还真是异常的曲折，首先想在windows下尝试，首先搜索到的教程是用jekyll作为模板来用，经过多重踩坑之后以放弃告终。然后可爱的室友告诉我hexo比较好用，于是转战hexo，结果在卡在了部署的那里，经过一番折腾后再次弃坑，一怒之下转向了前段时间折腾我好长时间的linux系统，终于……好了（心情激动中）。<br>讲道理中间还是踩了些坑，不过好在整体过程都没什么问题，现在趁热把过程记录下来。</p>
+        <p>#听说这样可以变成标题1<br>2018年1月19日，我终于把想要搭的博客搭好了……<br>搭建的路程还真是异常的曲折，首先想在windows下尝试，首先搜索到的教程是用jekyll作为模板来用，经过多重踩坑之后以放弃告终。然后可爱的室友告诉我hexo比较好用，于是转战hexo，结果在卡在了部署的那里，经过一番折腾后再次弃坑，一怒之下转向了前段时间折腾我好长时间的linux系统，终于……好了（心情激动中）。<br>讲道理中间还是踩了些坑，不过好在整体过程都没什么问题，现在趁热把过程记录下来。</p>
 <p>##安装hexo<br>hexo的官网还是足够地人性化的，把hexo的安装和配置都讲得比较清楚。<br>由于hexo是基于nodejs的，所以需要先行安装nodejs。<br>按照官网的方法，最好是用Node Version Manager来安装，过程如下：</p>
 <blockquote>
 <p>$ curl -o- <a href="https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh" target="_blank" rel="noopener">https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh</a> | bash<br>$ wget -qO- <a href="https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh" target="_blank" rel="noopener">https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh</a> | bash<br>$ nvm install stable<br>这样就下载到了nodejs的稳定版本，当然也可以在nodejs的官网上下载安装包然后去安装。<br>另外，我在下载的时候直接用了：<br>$ sudo apt-get install nodejs<br>这样也是可以用的，至少在当前的版本下是可以的。<br>接下来安装npm，用它来安装hexo。<br>$ sudo apt-get install npm<br>$ npm install -g hexo-cli<br>（上面的-g表示全局安装，如果没有-g的话就会被安装在当前执行命令行的路径下）<br>这样一来就安装好hexo了。</p>
@@ -330,8 +331,6 @@
 <p>##还有些什么呢<br>这是我的博客的开始，我希望这是我的一个新起点，写博客就是为了记录自己的生活与学习的过程，记录自己的心情，记录自己的经历，在以后看来想必还会是美好的吧！加油～</p>
 </blockquote>
 
-          
-        
       
     </div>
     
@@ -348,140 +347,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/19/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhaofeng Si">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tesla Castle">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/19/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-19T20:40:44+08:00">2018-01-19</time>
+              <a href="/2018/01/19/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -491,14 +378,19 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -519,8 +411,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -562,6 +463,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Deployment"><span class="nav-number">1.</span> <span class="nav-text">Deployment</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Docs-https-hexo-io-docs-deployment-html"><span class="nav-number">1.1.</span> <span class="nav-text">Docs: https://hexo.io/docs/deployment.html</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Extensions"><span class="nav-number">2.</span> <span class="nav-text">Extensions</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Plugins-https-hexo-io-plugins"><span class="nav-number">2.1.</span> <span class="nav-text">Plugins: https://hexo.io/plugins/</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Themes-https-hexo-io-themes"><span class="nav-number">2.2.</span> <span class="nav-text">Themes: https://hexo.io/themes/</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -686,6 +603,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.1"></script>
+
+
 
   
 
