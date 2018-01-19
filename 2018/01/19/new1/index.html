@@ -107,7 +107,7 @@
 <meta property="og:site_name" content="Tesla Castle">
 <meta property="og:description" content="终于把博客搭好啦，趁热写下关键的东西～">
 <meta property="og:image" content="http://yoursite.com/2018/01/19/new1/new1/pic1.png">
-<meta property="og:updated_time" content="2018-01-19T14:33:54.321Z">
+<meta property="og:updated_time" content="2018-01-19T14:37:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ubuntu16.04使用hexo搭建github博客">
 <meta name="twitter:description" content="终于把博客搭好啦，趁热写下关键的东西～">
@@ -322,18 +322,92 @@
 <h1 id="听说这样可以变成标题1"><a href="#听说这样可以变成标题1" class="headerlink" title="听说这样可以变成标题1"></a>听说这样可以变成标题1</h1><p>2018年1月19日，我终于把想要搭的博客搭好了……<br>搭建的路程还真是异常的曲折，首先想在windows下尝试，首先搜索到的教程是用jekyll作为模板来用，经过多重踩坑之后以放弃告终。然后可爱的室友告诉我hexo比较好用，于是转战hexo，结果在卡在了部署的那里，经过一番折腾后再次弃坑，一怒之下转向了前段时间折腾我好长时间的linux系统，终于……好了（心情激动中）。<br>讲道理中间还是踩了些坑，不过好在整体过程都没什么问题，现在趁热把过程记录下来。</p>
 <h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>hexo的官网还是足够地人性化的，把hexo的安装和配置都讲得比较清楚。<br>由于hexo是基于nodejs的，所以需要先行安装nodejs。<br>按照官网的方法，最好是用Node Version Manager来安装，过程如下：</p>
 <blockquote>
-<p>$ curl -o- <a href="https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh" target="_blank" rel="noopener">https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh</a> | bash<br>$ wget -qO- <a href="https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh" target="_blank" rel="noopener">https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh</a> | bash<br>$ nvm install stable<br>这样就下载到了nodejs的稳定版本，当然也可以在nodejs的官网上下载安装包然后去安装。<br>另外，我在下载的时候直接用了：<br>$ sudo apt-get install nodejs<br>这样也是可以用的，至少在当前的版本下是可以的。<br>接下来安装npm，用它来安装hexo。<br>$ sudo apt-get install npm<br>$ npm install -g hexo-cli<br>（上面的-g表示全局安装，如果没有-g的话就会被安装在当前执行命令行的路径下）<br>这样一来就安装好hexo了。</p>
-<h2 id="使用hexo搭建本地服务器"><a href="#使用hexo搭建本地服务器" class="headerlink" title="使用hexo搭建本地服务器"></a>使用hexo搭建本地服务器</h2><p>官网上很友好地详细地写出了详细的过程：<br>首先初始化：<br>$ hexo init <folder><br>最右边那个是要放博客文件的文件夹名字，可以是还不存在的文件夹，会自动创建，也可以是已经创建好的，但是必须是空的。<br>接下来进入文件夹安装nodejs支持<br>$ cd <folder><br>$ npm install<br>安装之后文件夹中就会出现一系列文档和文件夹，其中比较重要的是_config.yml，是网站的配置文件，有很多个性化选项都可以在里面进行配置，具体的可以在官网上看到。<br>接下来是重点：<br>$ hexo clean<br>$ hexo generate<br>$ hexo server<br>然后可以看到下面的情形：<br><img src="new1/pic1.png" alt="pic1"><br>现在打开命令行中出现的那个链接就可以看见成果啦！</folder></folder></p>
-<h2 id="搭建github上自己的博客"><a href="#搭建github上自己的博客" class="headerlink" title="搭建github上自己的博客"></a>搭建github上自己的博客</h2><p>这样的话就需要git了，这个安装起来简单暴力<br>$ sudo apt-get install git<br>为了能够创建博客，需要在github上创建一个仓库，创建的时候名字设置成为<username>.github.io。<br>为了能够使本地用户能够直接访问仓库，需要创建一个sshkey：<br>mkdir ~/.ssh<br>cd ~/.ssh<br>ssh-keygen -t rsa<br>这样之后复制已经创建好的密钥，在github中的个人设置中添加密钥：<br>cat ~/.ssh/id_rsa.pub<br>这样就配置好了密钥，然后我们需要配置一下github用户：<br>git config –global user.name “xxx”<br>git config –global user.email “xxx@xxx.com”<br>然后进行测试，这里出现可以进入到github就好：<br>ssh -T git@github.com<br>这里好了之后，去复制一下仓库的地址，就可以放心地关掉github的网页了，下面是hexo的操作。<br>首先修改_config.yml文件，在文件最后修改：</username></p>
+<p>$ curl -o- <a href="https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh" target="_blank" rel="noopener">https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh</a> | bash<br>$ wget -qO- <a href="https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh" target="_blank" rel="noopener">https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh</a> | bash<br>$ nvm install stable</p>
+</blockquote>
+<p>这样就下载到了nodejs的稳定版本，当然也可以在nodejs的官网上下载安装包然后去安装。<br>另外，我在下载的时候直接用了：</p>
+<blockquote>
+<p>$ sudo apt-get install nodejs</p>
+</blockquote>
+<p>这样也是可以用的，至少在当前的版本下是可以的。<br>接下来安装npm，用它来安装hexo。</p>
+<blockquote>
+<p>$ sudo apt-get install npm<br>$ npm install -g hexo-cli</p>
+</blockquote>
+<p>（上面的-g表示全局安装，如果没有-g的话就会被安装在当前执行命令行的路径下）<br>这样一来就安装好hexo了。</p>
+<h2 id="使用hexo搭建本地服务器"><a href="#使用hexo搭建本地服务器" class="headerlink" title="使用hexo搭建本地服务器"></a>使用hexo搭建本地服务器</h2><p>官网上很友好地详细地写出了详细的过程：<br>首先初始化：</p>
+<blockquote>
+<p>$ hexo init <folder></folder></p>
+</blockquote>
+<p>最右边那个是要放博客文件的文件夹名字，可以是还不存在的文件夹，会自动创建，也可以是已经创建好的，但是必须是空的。<br>接下来进入文件夹安装nodejs支持</p>
+<blockquote>
+<p>$ cd <folder><br>$ npm install</folder></p>
+</blockquote>
+<p>安装之后文件夹中就会出现一系列文档和文件夹，其中比较重要的是_config.yml，是网站的配置文件，有很多个性化选项都可以在里面进行配置，具体的可以在官网上看到。<br>接下来是重点：</p>
+<blockquote>
+<p>$ hexo clean<br>$ hexo generate<br>$ hexo server</p>
+</blockquote>
+<p>然后可以看到下面的情形：<br><img src="new1/pic1.png" alt="pic1"><br>现在打开命令行中出现的那个链接就可以看见成果啦！</p>
+<h2 id="搭建github上自己的博客"><a href="#搭建github上自己的博客" class="headerlink" title="搭建github上自己的博客"></a>搭建github上自己的博客</h2><p>这样的话就需要git了，这个安装起来简单暴力</p>
+<blockquote>
+<p>$ sudo apt-get install git</p>
+</blockquote>
+<p>为了能够创建博客，需要在github上创建一个仓库，创建的时候名字设置成为<username>.github.io。<br>为了能够使本地用户能够直接访问仓库，需要创建一个sshkey：</username></p>
+<blockquote>
+<p>mkdir ~/.ssh<br>cd ~/.ssh<br>ssh-keygen -t rsa</p>
+</blockquote>
+<p>这样之后复制已经创建好的密钥，在github中的个人设置中添加密钥：</p>
+<blockquote>
+<p>cat ~/.ssh/id_rsa.pub</p>
+</blockquote>
+<p>这样就配置好了密钥，然后我们需要配置一下github用户：</p>
+<blockquote>
+<p>git config –global user.name “xxx”<br>git config –global user.email “xxx@xxx.com”</p>
+</blockquote>
+<p>然后进行测试，这里出现可以进入到github就好：</p>
+<blockquote>
+<p>ssh -T git@github.com</p>
+</blockquote>
+<p>这里好了之后，去复制一下仓库的地址，就可以放心地关掉github的网页了，下面是hexo的操作。<br>首先修改_config.yml文件，在文件最后修改：</p>
+<blockquote>
 <p>#Deployment</p>
-<p>##Docs: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">https://hexo.io/docs/deployment.html</a><br>deploy:<br> type: git<br> repo: git@github.com:xxx/xxx.github.io.git<br> branch: master<br>其中第二个是刚才复制的仓库的地址。<br>接下来是一系列操作，在以后的部署网站的操作中也是这样做：<br>hexo clean<br>hexo g<br>hexo d<br>其中g是generate，d是deploy，这两个也可以连着使用：<br>hexo d -g<br>这样一来，输入自己的仓库的名字，就可以看到自己的博客啦～虽然现在还是白板就是了……</p>
-<h2 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h2><p>发布文章的话需要首先创建一个文件：<br>hexo new “xxx”<br>后面那个是文件名。这样会生成一个.md文件，文章支持markdown格式，还是比较好用的。<br>如果想要插入图片的话首先需要更改一下设置，在_config.yml中修改：<br>post_asset_folder: true<br>然后执行：<br>npm install hexo-asset-image –save<br>这样的话生成文章的同时会出现一个文件夹，里面存放需要用到的图片，然后在.md文件中按照markdown格式去引用就好。<br>在写好文章之后需要发布的话就使用刚才的指令进行部署就好。<br>同样还可以写草稿，这些不会被看见，也就是说可以当私密文档用，操作如下:<br>hexo new draft “xxx”<br>然后想要变成文章的话就：<br>hexo publish [layout] <filename></filename></p>
+<p>##Docs: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">https://hexo.io/docs/deployment.html</a><br>deploy:<br> type: git<br> repo: git@github.com:xxx/xxx.github.io.git<br> branch: master</p>
+</blockquote>
+<p>其中第二个是刚才复制的仓库的地址。<br>接下来是一系列操作，在以后的部署网站的操作中也是这样做：</p>
+<blockquote>
+<p>hexo clean<br>hexo g<br>hexo d</p>
+</blockquote>
+<p>其中g是generate，d是deploy，这两个也可以连着使用：</p>
+<blockquote>
+<p>hexo d -g</p>
+</blockquote>
+<p>这样一来，输入自己的仓库的名字，就可以看到自己的博客啦～虽然现在还是白板就是了……</p>
+<h2 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h2><p>发布文章的话需要首先创建一个文件：</p>
+<blockquote>
+<p>hexo new “xxx”</p>
+</blockquote>
+<p>后面那个是文件名。这样会生成一个.md文件，文章支持markdown格式，还是比较好用的。<br>如果想要插入图片的话首先需要更改一下设置，在_config.yml中修改：</p>
+<blockquote>
+<p>post_asset_folder: true</p>
+</blockquote>
+<p>然后执行：</p>
+<blockquote>
+<p>npm install hexo-asset-image –save</p>
+</blockquote>
+<p>这样的话生成文章的同时会出现一个文件夹，里面存放需要用到的图片，然后在.md文件中按照markdown格式去引用就好。<br>在写好文章之后需要发布的话就使用刚才的指令进行部署就好。<br>同样还可以写草稿，这些不会被看见，也就是说可以当私密文档用，操作如下:</p>
+<blockquote>
+<p>hexo new draft “xxx”</p>
+</blockquote>
+<p>然后想要变成文章的话就：</p>
+<blockquote>
+<p>hexo publish [layout] <filename></filename></p>
+</blockquote>
 <h2 id="更改主题"><a href="#更改主题" class="headerlink" title="更改主题"></a>更改主题</h2><p>其实更改主题是很简单的一件事情，而我，却失败了很多次……最终使用了现在这个NexT主题。其实这个主题还是不错的，但是有同学在用，不太想重复……<br>想要更换主题的话，可以在官网的Theme一栏中找到好多好看的主题，然后点开预览在里面找到作者的github，就可以找到主题的相应文件啦。一般情况下的操作是，用git把github上的东西clone到自己的博客文件夹下的themes文件夹中，文件家的名字可以自己起，然后对_config.yml文件进行操作，更改theme:后面为刚才那个文件夹的名字，比如我用的是next，就是这样子的：</p>
+<blockquote>
 <p>#Extensions</p>
 <p>##Plugins: <a href="https://hexo.io/plugins/" target="_blank" rel="noopener">https://hexo.io/plugins/</a></p>
-<p>##Themes: <a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a><br>theme: next<br>然后就大功告成啦～</p>
-<h2 id="还有些什么呢"><a href="#还有些什么呢" class="headerlink" title="还有些什么呢"></a>还有些什么呢</h2><p>这是我的博客的开始，我希望这是我的一个新起点，写博客就是为了记录自己的生活与学习的过程，记录自己的心情，记录自己的经历，在以后看来想必还会是美好的吧！加油～</p>
+<p>##Themes: <a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a><br>theme: next</p>
 </blockquote>
+<p>然后就大功告成啦～</p>
+<h2 id="还有些什么呢"><a href="#还有些什么呢" class="headerlink" title="还有些什么呢"></a>还有些什么呢</h2><p>这是我的博客的开始，我希望这是我的一个新起点，写博客就是为了记录自己的生活与学习的过程，记录自己的心情，记录自己的经历，在以后看来想必还会是美好的吧！加油～<br>emmm调格式也挺难受的……</p>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p>hexo官网： <a href="https://hexo.io/docs/themes.html" target="_blank" rel="noopener">https://hexo.io/docs/themes.html</a><br>hexo插入图片： <a href="http://blog.csdn.net/sugar_rainbow/article/details/57415705" target="_blank" rel="noopener">http://blog.csdn.net/sugar_rainbow/article/details/57415705</a></p>
 
       
