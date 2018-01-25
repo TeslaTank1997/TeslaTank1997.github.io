@@ -107,7 +107,7 @@
 <meta property="og:site_name" content="Tesla Castle">
 <meta property="og:description" content="终于把博客搭好啦，趁热写下关键的东西～">
 <meta property="og:image" content="http://yoursite.com/new1/pic1.png">
-<meta property="og:updated_time" content="2018-01-25T13:53:08.000Z">
+<meta property="og:updated_time" content="2018-01-25T13:59:57.347Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ubuntu16.04使用hexo搭建github博客">
 <meta name="twitter:description" content="终于把博客搭好啦，趁热写下关键的东西～">
@@ -206,13 +206,13 @@
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Startseite</a>
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
         </li>
       
         
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archiv</a>
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
         </li>
       
 
@@ -280,7 +280,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-19T21:03:21+08:00">2018-01-19</time>
             
@@ -321,17 +321,11 @@
         <p>终于把博客搭好啦，趁热写下关键的东西～<br><a id="more"></a></p>
 <h1 id="听说这样可以变成标题1"><a href="#听说这样可以变成标题1" class="headerlink" title="听说这样可以变成标题1"></a>听说这样可以变成标题1</h1><p>2018年1月19日，我终于把想要搭的博客搭好了……<br>搭建的路程还真是异常的曲折，首先想在windows下尝试，首先搜索到的教程是用jekyll作为模板来用，经过多重踩坑之后以放弃告终。然后可爱的室友告诉我hexo比较好用，于是转战hexo，结果在卡在了部署的那里，经过一番折腾后再次弃坑，一怒之下转向了前段时间折腾我好长时间的linux系统，终于……好了（心情激动中）。<br>讲道理中间还是踩了些坑，不过好在整体过程都没什么问题，现在趁热把过程记录下来。</p>
 <h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>hexo的官网还是足够地人性化的，把hexo的安装和配置都讲得比较清楚。<br>由于hexo是基于nodejs的，所以需要先行安装nodejs。<br>按照官网的方法，最好是用Node Version Manager来安装，过程如下：</p>
-<blockquote>
-<p>$ curl -o- <a href="https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh" target="_blank" rel="noopener">https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh</a> | bash<br>$ wget -qO- <a href="https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh" target="_blank" rel="noopener">https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh</a> | bash<br>$ nvm install stable</p>
-</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash</span><br><span class="line">$ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash</span><br><span class="line">$ nvm install stable</span><br></pre></td></tr></table></figure>
 <p>这样就下载到了nodejs的稳定版本，当然也可以在nodejs的官网上下载安装包然后去安装。<br>另外，我在下载的时候直接用了：</p>
-<blockquote>
-<p>$ sudo apt-get install nodejs</p>
-</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install nodejs</span><br></pre></td></tr></table></figure>
 <p>这样也是可以用的，至少在当前的版本下是可以的。<br>接下来安装npm，用它来安装hexo。</p>
-<blockquote>
-<p>$ sudo apt-get install npm<br>$ npm install -g hexo-cli</p>
-</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install npm</span><br><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 <p>（上面的-g表示全局安装，如果没有-g的话就会被安装在当前执行命令行的路径下）<br>这样一来就安装好hexo了。</p>
 <h2 id="使用hexo搭建本地服务器"><a href="#使用hexo搭建本地服务器" class="headerlink" title="使用hexo搭建本地服务器"></a>使用hexo搭建本地服务器</h2><p>官网上很友好地详细地写出了详细的过程：<br>首先初始化：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; $ hexo init &lt;folder&gt;</span><br></pre></td></tr></table></figure>
@@ -339,7 +333,9 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; $ <span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">&gt; $ npm install</span><br></pre></td></tr></table></figure>
 <p>安装之后文件夹中就会出现一系列文档和文件夹，其中比较重要的是_config.yml，是网站的配置文件，有很多个性化选项都可以在里面进行配置，具体的可以在官网上看到。<br>接下来是重点：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo generate</span><br><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>然后可以看到下面的情形：<br><img src="/new1/pic1.png" alt="pic1"><br>现在打开命令行中出现的那个链接就可以看见成果啦！</p>
+<p>然后可以看到下面的情形：</p>
+<p><img src="/new1/pic1.png" alt="pic1"></p>
+<p>现在打开命令行中出现的那个链接就可以看见成果啦！</p>
 <h2 id="搭建github上自己的博客"><a href="#搭建github上自己的博客" class="headerlink" title="搭建github上自己的博客"></a>搭建github上自己的博客</h2><p>这样的话就需要git了，这个安装起来简单暴力</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install git</span><br></pre></td></tr></table></figure>
 <p>为了能够创建博客，需要在github上创建一个仓库，创建的时候名字设置成为<username>.github.io。<br>为了能够使本地用户能够直接访问仓库，需要创建一个sshkey：</username></p>
@@ -462,10 +458,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -486,7 +482,7 @@
                   <a href="/archives/">
                 
                     <span class="site-state-item-count">3</span>
-                    <span class="site-state-item-name">Artikel</span>
+                    <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
               
@@ -554,7 +550,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
